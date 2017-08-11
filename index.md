@@ -7,4 +7,10 @@
 * All code in Git(Hub)
   * PR -> Review -> Merge (optimistic)
 * MDN Coding Style (m-c .eslint defaults)
-* Automated CI: treeherder pref. First, fallback to Travis
+* Automated CI: run through Travis CI and status posted to treeherder
+
+### Code
+
+- WebExtension: https://github.com/mozilla-lockbox/lockbox-extension
+- Data Store: https://github.com/mozilla-lockbox/lockbox-datastore
+- Mobile Apps: https://github.com/mozilla-lockbox/lockbox-cordova
