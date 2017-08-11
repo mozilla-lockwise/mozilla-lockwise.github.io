@@ -2,8 +2,8 @@
 
 ## Development Process
 
-* Task list: prioritized using cross-repo Project in GitHub
-* Daily chat: 11 Mountain / 12 Central (scheduled for Vidyo Lockbox Room)
+* Task list: prioritized using cross-repo [Projects in GitHub](https://github.com/orgs/mozilla-lockbox/projects)
+* Daily standup: async but prompted by "geekbot" at 3 PM Mountain
 * All code in Git(Hub)
   * PR -> Review -> Merge (optimistic)
 * MDN Coding Style (m-c .eslint defaults)
