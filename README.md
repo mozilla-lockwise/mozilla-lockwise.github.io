@@ -3,7 +3,7 @@
 [This][repo-link] is a meta-repository to gather documentation and project-wide
 tasks for Mozilla's experimental [Lockbox product][org-link].
 
-Please visit the [Lockbox website](website-link) for more information.
+Please visit the [Lockbox website][website-link] for more information.
 
 ## Building Locally ##
 
