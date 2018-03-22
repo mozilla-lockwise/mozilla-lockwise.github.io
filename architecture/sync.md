@@ -33,7 +33,7 @@ The following terms are also used:
 
 The remote storage is managed via a [Kinto] server instance.  Kinto is essentially a RESTful key/value record store, with records managed with a collection, and a collection managed within a bucket.  Buckets and collections can also have application-specific metadata associated with them.  It can provide a per-user default bucket (referred to as "default").
 
-Authentication and authorization to Kinto is performed using [Firefox Accounts][fxa] and [OAUTH] bearer tokens, with at least the following scopes:
+Authentication and authorization to Kinto is performed using [Firefox Accounts][fxa] and [OAuth] bearer tokens, with at least the following scopes:
 
 * `profile` - Access to the user's profile information, especially their user identifier (uid).
 * `https://identity.firefox.com/apps/lockbox` - The Lockbox application feature.
@@ -432,7 +432,7 @@ The following telemetry event is used to record sync interactions.
 - Single "sync" event, on completion of the [process](#sync-process), with the following extra properties:
 
     - `fxa_uid` [**string**] - The FxA user identifier.
-    - `error` [**string**] - The [failure reason](#errors), or `null` if sync was successful.
+    - `error` [**string**] - The [failure reason](#sync-errors), or `null` if sync was successful.
 
 ## Schema Changes
 
@@ -457,7 +457,7 @@ The following indexes are removed:
 
 
 [data storage]: ./data-storage.md
-[Dexie]: https://dexie.org/
+[Dexie]: http://dexie.org/
 [ETag]: https://en.wikipedia.org/wiki/HTTP_ETag
 [FxA]: ./fxa.md
 [IndexedDB]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API

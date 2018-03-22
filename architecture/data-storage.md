@@ -25,24 +25,24 @@ An item is an Object, that is divided into three portions:
 - Content-submitted entry data
 - Item history data
 
-The data storage module does not maintain a cache of the cleartext values.  Each read operation (listing, retrieving) and removing includes a decrypt step; adding involves an encrypt step; updating includes decrypt and encrypt steps.  Consumers of the data storage module (_e.g._, desktop extension, iOS mobile app) **MAY** have a cleartext cache of some or all lockbox Items in order to operate.
+The data storage module does not maintain a cache of the cleartext values.  Each read operation (listing, retrieving) and removing includes a decrypt step; adding involves an encrypt step; updating includes decrypt and encrypt steps.  Consumers of the data storage module (_e.g._, desktop extension, iOS mobile app) **MAY** have a cleartext cache of some or all Lockbox Items in order to operate.
 
 ### Metadata
 
 The top-level metadata is everything about the item that does not typically need to be filled into a form.  It consists of the following:
 
-- **`id` (string)**: This member is a UUID that uniquely identifies the item, and** SHOULD** be a type-4 (random) UUID.
+- **`id` (string)**: This member is a UUID that uniquely identifies the item, and **SHOULD** be a type-4 (random) UUID.
 - **`disabled` (boolean)**: This member indicates whether or not the item is disabled.  Disabled items **SHOULD NOT** be used to fill forms.
 - **`title` (string)**: This member is a user-entered title or name for the item.  It can default to the origin/domain the item's entry data was created for.
 - **`tags` (string[])**: This member is an array of user-defined tags.  This member may be empty or omitted entirely.
 - **`origins` (string[])**: This member is an array of URIs this item can be applied to.  Typically an item has at most one origin, but advanced users can add additional origins if they are confident each is logically for the same owner.
 - **`created` (date/time)**: This member timestamps when the item was created.
 - **`modified` (date/time)**: This member timestamps when the item was last changed.  This includes **any** change to the item, be it entry data or metadata; the only exception is if the `last_used` member is changed.
-- **"last_used" (date/time)**: This member timestamps when the item was last accessed to fill a form.
+- **`last_used` (date/time)**: This member timestamps when the item was last accessed to fill a form.
 
 ### Entry Data
 
-The entry data is an Object that contains a type specification and the values needed to populate forms. The specifics of this JSON object are determined by the "type" member.
+The entry data is an Object that contains a type specification and the values needed to populate forms. The specifics of this JSON object are determined by the "kind" member.
 
 - **`kind` (string)**: This member indicates the kind of entry data contained.  Currently the only value defined is "login".
 - **`notes` (string)**: This member is a catch-all of information the user can set additional information about the item (_e.g._, security questions/answers).
@@ -67,7 +67,7 @@ All of the date/time values in this format are represented as JSON strings forma
 
 ### Limits
 
-the following limits are imposed within a Lockbox Item:
+The following limits are imposed within a Lockbox Item:
 
 * **`title`** - maximum length of 500 characters
 * **`entry.username`** - maximum length of 500 characters
@@ -186,7 +186,7 @@ Each Lockbox item permits multiple origins to be associated with it.  However, h
 
 It is also possible for multiple items to have the same origin.  This is a much more common occurrence, for instance a user that has both personal and business/work accounts to a cloud-based service (_e.g._, Gmail).
 
-Finally, the precise value of "origins" elements is still to be determined. An initial (possibly naive) approach is to use just the hostname.  However, it is likely desirable to match on a subdomain (e.g, matching "m.facebook.com" if there is an item with "facebook.com") but requires careful forethought (_e.g._, "myfacebook.com" must not match "facebook.com:) since the searches occur against cryptographic hashes.  Further research and experimentation needed to determine the correct approach.
+Finally, the precise value of "origins" elements is still to be determined. An initial (possibly naive) approach is to use just the hostname.  However, it is likely desirable to match on a subdomain (e.g, matching "m.facebook.com" if there is an item with "facebook.com") but requires careful forethought (_e.g._, "myfacebook.com" must not match "facebook.com") since the searches occur against cryptographic hashes.  Further research and experimentation needed to determine the correct approach.
 
 ### Storing "Master" Keys and Salts
 

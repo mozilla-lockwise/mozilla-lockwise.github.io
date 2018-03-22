@@ -40,7 +40,7 @@ The authorization portion starts by sending an HTTPS `GET` request to the FxA au
   - `profile` to obtain information about the user
   - `openid` to obtain an `id_token` for the user
   - `https://identity.mozilla.org/apps/lockbox` to obtain a Lockbox application-scoped encryption key
-* `keys_jwk` - The ephemeral ECDH public key used to securely obtain application-scoped keys (see [Application Scoped Keys](#app-scoped-keys))
+* `keys_jwk` - The ephemeral ECDH public key used to securely obtain application-scoped keys (see [Application Scoped Keys](#application-scoped-keys))
 * `state` - A randomly generated state value used to verify the authorization response (see [State Values](#state-values))
 * `code_challenge` - The [PKCE][PKCE] code challenge for this sign in attempt (see [PKCE Details](#pkce-details))
 * `code_challenge_method` (**== `S256`**) - The PKCE code challenge method, which is always `S256`
@@ -95,7 +95,7 @@ The FxA token endpoint validates the request parameters, and (upon success) retu
 
 ### State Values ###
 
-The `state` value is generated randomly for each authorization attempt; it is 32 bytes of cryptographically random data and encoded as "BAS64URL".
+The `state` value is generated randomly for each authorization attempt; it is 32 bytes of cryptographically random data and encoded as [BASE64URL][BASE64URL].
 
 The client includes the `state` in the authorization request, and the FxA authorization endpoint includes it in the redirected authorization response.
 
@@ -103,7 +103,7 @@ The client includes the `state` in the authorization request, and the FxA author
 
 [PKCE][PKCE] provides a mechanism for public clients to integrity protect the authorization grant flow.  FxA uses PKCE in lieu of true client credentials (`client_id` and `client_secret`) for public clients.
 
-PKCE uses a unique code for each sign in attempt; a challenge is included in the authorization request and a verifier is included in the token request, with the server verifying the authorization request's challenge matches the token request's verifier
+PKCE uses a unique code for each sign in attempt; a challenge is included in the authorization request and a verifier is included in the token request, with the server verifying the authorization request's challenge matches the token request's verifier.
 
 The PKCE proof is initiated as part of the authorization request as follows:
 
@@ -124,7 +124,7 @@ Once the client has obtained the authorization code, the PKCE proof is verified 
 
 Application scoped keys is an upcoming feature in FxA.  The keys are derived from the user's credentials, are only known by the FxA web content (**_not_** the FxA server(s)) and the user, and are specific to the application(s) provisioned.  The user's credentials cannot be reversed from the derived key.
 
-The application scoped keys are represented in a bundle as a JSON object; each member of the bundle is the scope and the value is the JSON [JWK][JWK] of the symmetric encryption key:
+The application scoped keys are represented in a bundle as a JSON object; each member of the bundle is the scope and the value is the [JWK][JWK] of the symmetric encryption key:
 
 ```javascript
 {
@@ -157,7 +157,7 @@ The client decrypts this JWE using its **private** ECDH key, and parses the resu
 
 ### Token Notes ###
 
-FxA access tokens are valid for 1209600 seconds (two weeks) by default, and can be revoked; FxA refresh tokens never expire and can be revoked.  One more more of these tokens are revoked when:
+FxA access tokens are valid for 1209600 seconds (two weeks) by default, and can be revoked; FxA refresh tokens never expire and can be revoked.  One or more of these tokens are revoked when:
 
 * The user changes their password
 * The user resets their account (forgotten password) 
@@ -188,7 +188,7 @@ The Lockbox extension uses the async method `browser.identity.launchWebAuthFlow(
 
 ### Initial State ###
 
-The a user first installs Lockbox, the datastore is initialized using a default master key.  If access to secure device storage is available, a random master key is generated and stored there.
+When the user first installs Lockbox, the datastore is initialized using a default master key.  If access to secure device storage is available, a random master key is generated and stored there.
 
 This allows a user to make use of Lockbox, retrieving/adding/updating/deleting entries.  However, none of this data is sent to remote cloud storage.
 
