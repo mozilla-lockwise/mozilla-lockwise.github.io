@@ -10,7 +10,7 @@ us to test and quickly iterate on hypotheses (on desktop and mobile). All
 
 # Products
 
-**Firefox Lockbox lets you easily access your passwords everywhere. Logins are stored and synced securely, using 256-bit encryption, keeping your information safe. Easily copy username and password details to get into apps and websites. Never again find yourself locked out of your account while on your phone!**
+Learn more about the Lockbox [project processes](/process.md).
 
 Please note, Firefox Lockbox is currently an English only app available in a few regions including Australia, New Zealand, United Kingdom, United States, and Canada.
 
