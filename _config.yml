@@ -10,7 +10,6 @@ plugins:
 
 header_pages:
   - faq.md
-  - privacy.md
   - process.md
   - architecture/index.md
 
