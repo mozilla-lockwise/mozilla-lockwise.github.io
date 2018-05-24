@@ -3,9 +3,6 @@ layout: page
 title: Architecture
 ---
 
-This is a collection of technical documents describing current and potential
-(future) engineering design decisions.
-
 * [Data Storage](./data-storage.md)
   * [Locking/Unlocking](./lock-unlock.md)
 * [Firefox Accounts](./fxa.md)
