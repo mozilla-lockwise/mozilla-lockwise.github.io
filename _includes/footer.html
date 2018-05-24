@@ -1,0 +1,40 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col footer-col-1">
+        <h6>Contact Us</h6>
+        <ul class="contact-list">
+          <!-- <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+            </li> -->
+            {%- if site.email -%}
+            <li>
+              <svg class="svg-icon">
+                <use xlink:href="{{relativeBase}}architecture/images/mail.svg#mail"></use>
+              </svg>
+              <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- endif -%}
+        </ul>
+        {%- include social.html -%}
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="site-info">
+          <li><h5 class="footer-heading">{{ site.title | escape }}</h5></li>
+          <!-- <li><p>{{- site.description | escape -}}</p></li> -->
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>

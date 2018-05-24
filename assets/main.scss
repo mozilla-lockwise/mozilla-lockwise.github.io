@@ -2,16 +2,96 @@
 ---
 @import "minima";
 
+
+// global
 body {
   font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
-table th {
-  border-bottom: 1px solid #efefef;
-  text-align: left;
+h1, h2 ,h3, h4, h5 {
+  line-height: 1.25;
 }
-table td {
-  padding: 4px 24px 4px 0;
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+  font-weight: 200;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-weight: 700;
+  margin-bottom: .25rem;
+  margin-top: 1.15rem;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+h6 {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.post-content h4 {
+  font-size: 1.15rem;
+}
+
+.site-header {
+  border-top: none;
+}
+
+table {
+  th {
+    border-bottom: 1px solid #efefef;
+    text-align: left;
+  }
+
+  td {
+    padding: 4px 24px 4px 4px;
+
+    img {
+      vertical-align: text-top;
+    }
+  }
+}
+
+li {
+  margin-top: .25rem;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.logo {
+  max-width: 160px;
+  line-height: 54px;
+  display: inline-block;
+  float: left;
+}
+
+.svg-icon {
+  vertical-align: middle;
+}
+
+.post-content > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 a.button-link {
@@ -34,4 +114,73 @@ div.callout-box {
   background-color: #f9f9fa;
   border: 1px solid #717171;
   text-align: center;
+}
+
+
+// footer
+.footer-col:last-child {
+  float: right;
+}
+
+.site-footer {
+  .contact-list,
+  .social-media-list {
+    margin: 0;
+  }
+
+  .site-info {
+    margin: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  h4 {
+    margin: 0;
+  }
+}
+
+.footer-col-wrapper {
+  font-size: .85rem;
+}
+
+.footer-heading {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+
+// small only
+@media screen and (max-width: 600px) {
+  .footer-col-2 {
+    text-align: center;
+    margin-top: 2rem;
+    width: calc(100% - (30/2));
+  }
+}
+
+
+// small & medium only
+@media screen and (max-width: 800px) {
+  .post-content h4 {
+    font-size: 1rem;
+  }
+}
+
+// medium up
+@media screen and (min-width: 600px) {
+  .footer-col-2 {
+    text-align: right;
+  }
+}
+
+
+// large
+@media screen and (min-width: 800px) {
+  .footer-col-1,
+  .footer-col-2 {
+    width: auto;
+  }
 }
