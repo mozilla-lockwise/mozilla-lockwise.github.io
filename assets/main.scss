@@ -2,63 +2,53 @@
 ---
 @import "minima";
 
+
+// global
 body {
   font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
-table th {
-  border-bottom: 1px solid #efefef;
-  text-align: left;
+h1, h2 ,h3, h4, h5 {
+  line-height: 1.25;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+  font-weight: 200;
 }
 
 h3 {
   margin-top: 1.5rem;
   padding-top: 1rem;
   margin-bottom: .5rem;
-  font-size: 1.467rem;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 h4 {
+  font-weight: 700;
   margin-bottom: .25rem;
   margin-top: 1.15rem;
-  font-size: 1.133rem;
-  font-weight: 500;
 }
 
 h5 {
+  font-weight: 700;
+  font-size: 1rem;
   margin-bottom: .5rem;
-  font-size: 0.8667rem;
-  font-weight: 500;
 }
 
-// needed to overwrite the theme heading size declarations...
-.post-content {
-  h2 {
-    font-size: 1.867rem;
-  }
-
-  h3 {
-    font-size: 1.467rem;
-  }
-
-  h4 {
-    font-size: 1.15rem;
-  }
-
-  h5 {
-    font-size: 0.8667rem;
-  }
+h6 {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 700;
+  margin-bottom: .5rem;
 }
 
-a,
-a:visited,
-a:hover {
-  color: #0060df;
-}
-
-a:active {
-  color: #003eaa;
+.post-content h4 {
+  font-size: 1.15rem;
 }
 
 .site-header {
@@ -95,9 +85,8 @@ li {
   float: left;
 }
 
-.icon-mail {
-  width: 16px;
-  height: 12px;
+.svg-icon {
+  vertical-align: middle;
 }
 
 .post-content > h2:first-child {
@@ -127,16 +116,6 @@ div.callout-box {
   text-align: center;
 }
 
-.image-grid {
-  img {
-    margin: 0 0 1.5rem;
-    width: 90%;
-  }
-}
-
-img {
-  max-width: 100%;
-}
 
 // footer
 .footer-col:last-child {
@@ -144,11 +123,6 @@ img {
 }
 
 .site-footer {
-  .icon {
-    fill: #828282;
-    padding-right: 4px;
-  }
-
   .contact-list,
   .social-media-list {
     margin: 0;
@@ -174,7 +148,7 @@ img {
 .footer-heading {
   margin: 0;
   padding: 0;
-  font-size: 0.8667rem;
+  font-size: 1rem;
 }
 
 
@@ -199,24 +173,6 @@ img {
 @media screen and (min-width: 600px) {
   .footer-col-2 {
     text-align: right;
-  }
-
-  .image-grid {
-    img {
-      margin: 0 0 3rem;
-      width: auto;
-    }
-  }
-
-  .image-grid:not(.full) {
-    img {
-      display: inline-block;
-      width: 46%;
-
-      &:first-child {
-        margin-right: 4%;
-      }
-    }
   }
 }
 
