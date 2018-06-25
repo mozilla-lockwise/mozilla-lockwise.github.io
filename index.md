@@ -5,51 +5,31 @@ title: Firefox Lockbox
 
 This website is to gather documentation and details for Mozilla's experimental
 product: [Firefox Lockbox][website]. Firefox Lockbox will be the framework for
-us to test and quickly iterate on hypotheses (on desktop and mobile).
+us to test and quickly iterate on hypotheses (on desktop and mobile). All
+[planning and work](/process.md) is reflected on our [Waffle.io kanban board]([waffle]).
 
-All planning and work performed is reflected on our Waffle.io kanban board:  
-[https://waffle.io/mozilla-lockbox/lockbox-extension][waffle]
+# Products
 
-Learn more about the Lockbox [project processes](/process.md).
+**Firefox Lockbox lets you easily access your passwords everywhere. Logins are stored and synced securely, using 256-bit encryption, keeping your information safe. Easily copy username and password details to get into apps and websites. Never again find yourself locked out of your account while on your phone!**
 
-## Product Components
+## iOS mobile app
 
-Here are links to the in-progress projects that make up the Lockbox experiment.
+Easily copy username and password details to get into apps and websites. Never again find yourself locked out of your account while on your phone!
 
-This is not exhaustive nor a guarantee of any future plans but meant as a
-helpful reference.
+**Firefox Lockbox requires a Firefox Account in order to access your previously saved logins. If you do not have an account set up, get started [here](https://lockbox.firefox.com/faq.html#how-do-i-enable-sync-on-firefox).**
 
+![](assets/images/details/access.png)
+Access username and password information for all the accounts you save to Firefox.
 
-Component                           | Documentation                       | Status | Coverage
----                                 | ---                                 | ---    | ---
-[Data Store][datastore-repo]        | [data-store][datastore-docs]        | [![Build Status][datastore-travis-image]][datastore-travis-link] | [![Coverage Status][datastore-codecov-image]][datastore-codecov-link]
-[Firefox extension][extension-repo] | [lockbox-extension][extension-docs] | [![Build Status][extension-travis-image]][extension-travis-link] |  [![Coverage Status][extension-codecov-image]][extension-codecov-link]
-[iOS application][ios-repo]         | [lockbox-ios][ios-docs]             | [![BuddyBuild][buddybuild-image]][buddybuild-link] | [![Coverage Status][ios-codecov-image]][ios-codecov-link]
-[Project documentation][docs-repo]  | [mozilla-lockbox][website]
+![](assets/images/details/sync.png)
+Manage accounts in Firefox and sync changes automatically to Firefox Lockbox.
 
----
+![](assets/images/details/sort-filter.png)
+Sort and filter on your accounts to quickly locate the one you need.
 
-[website]: https://mozilla-lockbox.github.io/
+## Android mobile app
+
+Coming soon...
+
+[website]: https://lockbox.firefox.com/
 [waffle]: https://waffle.io/mozilla-lockbox/lockbox-extension
-[datastore-repo]: https://github.com/mozilla-lockbox/lockbox-datastore
-[datastore-docs]: https://mozilla-lockbox.github.io/lockbox-datastore/
-[datastore-travis-image]: https://travis-ci.org/mozilla-lockbox/lockbox-datastore.svg?branch=master
-[datastore-travis-link]: https://travis-ci.org/mozilla-lockbox/lockbox-datastore
-[datastore-codecov-image]: https://img.shields.io/codecov/c/github/mozilla-lockbox/lockbox-datastore.svg
-[datastore-codecov-link]: https://codecov.io/gh/mozilla-lockbox/lockbox-datastore
-
-[extension-repo]: https://github.com/mozilla-lockbox/lockbox-extension
-[extension-docs]: https://mozilla-lockbox.github.io/lockbox-extension/
-[extension-travis-image]: https://travis-ci.org/mozilla-lockbox/lockbox-extension.svg?branch=master
-[extension-travis-link]: https://travis-ci.org/mozilla-lockbox/lockbox-extension
-[extension-codecov-image]: https://img.shields.io/codecov/c/github/mozilla-lockbox/lockbox-extension.svg
-[extension-codecov-link]: https://codecov.io/gh/mozilla-lockbox/lockbox-extension
-
-[ios-repo]: https://github.com/mozilla-lockbox/lockbox-ios
-[ios-docs]: https://mozilla-lockbox.github.io/lockbox-ios/
-[buddybuild-image]: https://dashboard.buddybuild.com/api/statusImage?appID=5a0ddb736e19370001034f85&branch=master&build=latest
-[buddybuild-link]: https://dashboard.buddybuild.com/apps/5a0ddb736e19370001034f85/build/latest?branch=master
-[ios-codecov-image]: https://img.shields.io/codecov/c/github/mozilla-lockbox/lockbox-ios.svg
-[ios-codecov-link]: https://codecov.io/gh/mozilla-lockbox/lockbox-ios
-
-[docs-repo]: https://github.com/mozilla-lockbox/mozilla-lockbox.github.io/
