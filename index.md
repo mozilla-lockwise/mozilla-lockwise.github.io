@@ -6,7 +6,7 @@ title: Firefox Lockbox
 This website is to gather documentation and details for Mozilla's experimental
 product: [Firefox Lockbox][website]. Firefox Lockbox will be the framework for
 us to test and quickly iterate on hypotheses (on desktop and mobile). All
-[planning and work](/process.md) is reflected on our [Waffle.io kanban board]([waffle]).
+[planning and work](/process.md) is reflected on our [Waffle.io kanban board][waffle].
 
 # Products
 
