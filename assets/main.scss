@@ -183,7 +183,7 @@ h1.post-title {
 
 // HOME TEMPLATE RULES
 .home {
-  background: url(./images/bg.svg) white;
+  background: url(./images/bg.png) white;
   background-size: cover;
   box-sizing: border-box;
   display: grid;
@@ -206,10 +206,35 @@ h1.post-title {
     flex-direction: row;
   }
 
+  .home__extension-link:before {
+    content: "Try the Lockwise add-on";
+    color: #20123a;
+  }
+
+  .home__extension-link {
+    align-self: flex-start;
+    margin-left: 13%;
+    font-size: 18px;
+    letter-spacing: -0.6px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+
+    .button {
+      min-width: 195px;
+      height: auto;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 4px;
+      background-color: #393473;
+    }
+  }
+
   h1 {
     font-size: 36px;
-    line-height: 44px;
-    font-weight: 700;
+    line-height: 1.17;
+    font-weight: bold;
+    letter-spacing: -0.4px;
   }
 }
 
@@ -241,6 +266,10 @@ h1.post-title {
       a:first-child {
         padding-right: 8px;
       }
+    }
+    
+    .home__extension-link {
+      display: none;
     }
 
     .home__content-right {
@@ -283,7 +312,7 @@ h1.post-title {
       align-items: flex-start;
       display: flex;
       flex-direction: column;
-      flex: 1 0 45%;
+      flex: 1 0 0%;
       justify-content: space-between;
     }
 
@@ -291,10 +320,11 @@ h1.post-title {
       align-items: center;
       display: flex;
       flex-direction: row;
-      flex: 1 0 55%;
+      flex-wrap: wrap;
+      flex: 1 0 10%;
 
       a {
-        bottom: 44px;
+        flex-basis: content;
         position: relative;
       }
 
@@ -312,7 +342,7 @@ h1.post-title {
 
     h1 {
       font-size: 48px;
-      line-height: 56px;
+      line-height: 1.17;
     }
   }
 }
@@ -335,7 +365,7 @@ h1.post-title {
 
     .page-link {
       color: $link-grey;
-      font-size: .75rem;
+      font-size: 1rem;
     }
 
     &::after {
@@ -346,7 +376,7 @@ h1.post-title {
 
 .site-footer {
   .page-link:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 32px;
   }
 }
 
@@ -356,8 +386,17 @@ h1.post-title {
     height: 72px;
   }
 }
+.home .site-footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+}
+
 
 @media screen and (max-width: 768px) {
+  .home .site-footer {
+    position: relative;
+  }
   .site-footer {
     padding-bottom: 16px;
 
