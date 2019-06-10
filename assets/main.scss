@@ -228,6 +228,10 @@ h1.post-title {
       border-radius: 4px;
       background-color: #393473;
     }
+    
+    :hover {
+      background-color: #291D4F
+    }
   }
 
   h1 {
@@ -421,6 +425,7 @@ h1.post-title {
   position: fixed;
   bottom: 0;
   background-color: #fff;
+  border-top: 1px solid #f0f0f4;
 }
 
 
